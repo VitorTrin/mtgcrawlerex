@@ -1,6 +1,6 @@
-defmodule Mtgcrawler.Crawler do
+defmodule MtgCrawler.Crawler do
   @moduledoc """
-  Modulo que percorre um certo çite e obtem informações relevantes para compradores de cartinhas
+  Main module that crawls an website and returns relevant info according to the function
   """
 
   require Mtgcrawler.Session
