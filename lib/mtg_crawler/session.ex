@@ -1,4 +1,4 @@
-defmodule Mtgcrawler.Session do
+defmodule MtgCrawler.Session do
   @moduledoc false
 
   defmacro within_session(do: block) do

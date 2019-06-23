@@ -3,18 +3,18 @@ defmodule MtgCrawler.Crawler do
   Main module that crawls an website and returns relevant info according to the function
   """
 
-  require Mtgcrawler.Session
+  require MtgCrawler.Session
 
   alias Hound.Helpers.{
     Element,
     Navigation,
-    Page,
+    Page
   }
 
   def get_stores(
         url \\ "https://www.ligamagic.com.br/?view=cards%2Fsearch&card=tasigur%2C+the+golden+fang"
       ) do
-    Mtgcrawler.Session.within_session do
+    MtgCrawler.Session.within_session do
       Navigation.navigate_to(url)
       :css |> Page.find_element("input.exibir-mais") |> Element.click()
 

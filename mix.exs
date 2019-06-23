@@ -1,11 +1,11 @@
-defmodule Mtgcrawler.MixProject do
+defmodule MtgCrawler.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :mtgcrawler,
+      app: :mtg_crawler,
       version: "0.1.0",
-      elixir: "~> 1.9.0-rc.0",
+      elixir: "~> 1.8.2",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
@@ -14,8 +14,9 @@ defmodule Mtgcrawler.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
+      mod: {MtgCrawler.Application, []},
       extra_applications: [:logger]
-    ]
+]
   end
 
   # Run "mix help deps" to learn about dependencies.
@@ -24,6 +25,8 @@ defmodule Mtgcrawler.MixProject do
       # {:httpoison, "~> 1.5"},
       # {:floki, "~> 0.20.4"},
       # {:crawler, "~> 1.1"}
+      {:jason, "~> 1.1"},
+      {:plug_cowboy, "~> 2.0"},
       {:hound, github: "HashNuke/hound"}
     ]
   end
